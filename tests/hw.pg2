@@ -1,0 +1,34 @@
+Language = English
+
+Main {
+	Form Main {
+		Text = "Hello world"
+	}
+
+	Button btn {
+		Text = "Click me"
+		Font family = Ubuntu
+
+		Click {
+			if Main.Main.Text = "a" then {
+				Main.Main.Text = "b"
+			}
+			elseif Main.Main.Text = "b" then {
+				Main.Main.Text = "c"
+			}
+			elseif Main.Main.Text = "c" then {
+				Main.Main.Close
+			}
+			else {
+				_Useful objects._Show messange._Show message("Hello!", Ok, Default, "Hello")
+				Main.Main.Text = "a"
+			}
+			endif
+			while Main.Main.Text = Main.Main.Text {
+				_Useful objects._Interrupts._Break loop
+			}
+			endwhile
+			# Your explanatory comment
+		}
+	}
+}
